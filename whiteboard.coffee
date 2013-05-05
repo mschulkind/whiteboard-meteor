@@ -1,7 +1,7 @@
 if Meteor.isClient
-  Template.hello.greeting = -> "Welcome to whiteboard."
+  Template.canvas.greeting = -> "Welcome to whiteboard."
 
-  Template.hello.events(
+  Template.canvas.events(
     'click input': ->
       # template data, if any, is available in 'this'
       puts "You pressed the button"
