@@ -12,9 +12,25 @@ Template.board.helpers(
 Template.board.preserve(['#canvas'])
 
 Template.board.rendered = ->
-  unless @_eventsBound
-    @_eventsBound = true
+  unless @_initted
+    @_initted = true
     
-    Event.add(@find('#canvas'), 'click', ->
-      alert 'hi'
+    canvas = new fabric.StaticCanvas('canvas')
+    Deps.autorun(->
+      canvas.setDimensions(
+        width: Session.get('pageWidth') - 10
+        height: Session.get('pageHeight') - 10
+      )
     )
+
+    $('#canvas').
+      hammer().
+      on(
+        drag: (e) ->
+          canvas.add(new fabric.Circle(
+            radius: 3
+            fill: 'red'
+            left: e.gesture.center.pageX - 6
+            top: e.gesture.center.pageY - 6
+          ))
+      )

@@ -1,22 +1,23 @@
 <head>
   <script src='/fabric.js'></script>
+  <script src='/jquery.hammer.js'></script>
   <title>whiteboard</title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0' name='viewport' />
 </head>
 
 <body>
-  {{renderPage}}
   {{> status}}
+  {{renderPage}}
 </body>
 
 <template name="board">
-  {{#with board}}
-    <canvas id="canvas"></canvas>
-  {{/with}}
+  <canvas id="canvas"></canvas>
 </template>
 
 <template name="status">
-  <div>
+  <div id='status'>
     {{status}}
+    <br>
+    {{debug}}
   </div>
 </template>
