@@ -1,18 +1,20 @@
 <head>
-  <script src='fabric.js'></script>
+  <script src='/fabric.js'></script>
   <title>whiteboard</title>
 </head>
 
 <body>
-  {{> canvas}}
+  {{renderPage}}
   {{> status}}
 </body>
 
-<template name="canvas">
-  <canvas id="canvas"></canvas>
-  <div>
-    {{tapCount}}
-  </div>
+<template name="board">
+  {{#with board}}
+    <canvas id="canvas"></canvas>
+    <div>
+      {{tap_count}}
+    </div>
+  {{/with}}
 </template>
 
 <template name="status">
