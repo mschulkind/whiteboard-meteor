@@ -9,7 +9,4 @@ Template.board.helpers(
   board: -> Boards.findOne(Session.get('boardID'))
 )
 
-$ ->
-  $$('#canvas').tap(->
-    Boards.update(Session.get('boardID'), '$inc': {tap_count: 1})
-  )
+Template.board.preserve(['#canvas'])
