@@ -4,11 +4,18 @@
 
 <body>
   {{> canvas}}
+  {{> status}}
 </body>
 
 <template name="canvas">
   <canvas id="canvas"></canvas>
   <div>
     {{tapCount}}
+  </div>
+</template>
+
+<template name="status">
+  <div>
+    {{status}}
   </div>
 </template>

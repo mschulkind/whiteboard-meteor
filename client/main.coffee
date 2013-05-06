@@ -1,7 +1,9 @@
-$ ->
-  Session.set('tapCount', 0)
-  Template.canvas.tapCount = -> Session.get('tapCount')
+Session.set('tapCount', 0)
+Template.canvas.tapCount = -> Session.get('tapCount')
 
+Template.status.status = -> Meteor.status().status
+
+$ ->
   $(document).on('selectstart', ->
     false
   )
