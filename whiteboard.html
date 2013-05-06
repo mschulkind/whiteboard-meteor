@@ -1,6 +1,7 @@
 <head>
   <script src='/fabric.js'></script>
   <title>whiteboard</title>
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0' name='viewport' />
 </head>
 
 <body>
@@ -11,9 +12,6 @@
 <template name="board">
   {{#with board}}
     <canvas id="canvas"></canvas>
-    <div>
-      {{tap_count}}
-    </div>
   {{/with}}
 </template>
 
