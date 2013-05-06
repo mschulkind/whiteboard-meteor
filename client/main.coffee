@@ -5,5 +5,3 @@ $ ->
     false
   )
   
-  $$('#canvas').tap(->
-  )

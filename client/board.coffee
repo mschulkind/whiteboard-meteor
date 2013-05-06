@@ -6,7 +6,15 @@ Meteor.Router.add(
 )
 
 Template.board.helpers(
-  board: -> Boards.findOne(Session.get('boardID'))
+  board: -> Boards.findOne(Session.get('boardID')) || {}
 )
 
 Template.board.preserve(['#canvas'])
+
+Template.board.rendered = ->
+  unless @_eventsBound
+    @_eventsBound = true
+    
+    Event.add(@find('#canvas'), 'click', ->
+      alert 'hi'
+    )
